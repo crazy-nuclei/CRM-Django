@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %} LOGIN {% endblock %}
+
+{% block styles %} 
+    <style>
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            background-color: #f4f4f4;
+        }
+
+        .login-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20rem;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #85e01e;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-form button:hover {
+            background-color: #8cd434;
+        }
+
+        .anch {
+            display: block;
+            width: 98%;
+            background-color: #1cd6c9;
+            padding: 5px;
+            padding-top: 8px;
+            margin-top: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            text-align: center;
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Login form -->
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" class="nav-button">Login</button>
+            </form>
+            <a class = 'anch' href="{% url 'register' %}">Register</a>
+        </div>
+    </div>
+{% endblock %}

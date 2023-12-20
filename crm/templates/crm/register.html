@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %} REGISTER {% endblock %}
+
+{% block styles %} 
+    <style>
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; Full viewport height */
+            background-color: #f4f4f4;
+        }
+
+        .login-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20rem;
+            margin-top: 1rem;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .form-control {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #85e01e;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-form button:hover {
+            background-color: #8cd434;
+        }
+
+        li {
+            font-size: 10px;
+        }
+
+        .anch {
+            display: block;
+            width: 98%;
+            background-color: #1cd6c9;
+            padding: 5px;
+            padding-top: 8px;
+            margin-top: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            text-align: center;
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Login form -->
+    <div class="login-container">
+        {% include "crm/includes/formErrors.html" %}
+        <div class="login-form">
+            <h2>Register</h2>
+            <form action="{% url 'register' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }} 
+                <button type="submit" class="nav-button">Register</button>
+            </form>
+            <a class = 'anch' href="{% url 'login' %}">Login</a>
+        </div>
+    </div>
+{% endblock %}

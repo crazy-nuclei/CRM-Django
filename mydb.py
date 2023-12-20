@@ -5,7 +5,7 @@ try:
     connection = mysql.connector.connect(
         host="localhost",     # Or your MySQL server's address
         user="root",          # MySQL username
-        password=""   # MySQL password
+        password="pass"   # MySQL password
     )
     print("Connected to MySQL successfully!")
 

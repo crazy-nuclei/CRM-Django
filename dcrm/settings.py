@@ -55,7 +55,9 @@ ROOT_URLCONF = 'dcrm.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dcrm_app',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'pass',
         'HOST': 'localhost',
         'PORT': '3306'
     }

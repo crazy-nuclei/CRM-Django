@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %} CRM {% endblock %}
+
+{% block styles %} 
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 50px;
+            width: 90%; /* Reducing the width a bit to accommodate the margins */
+            margin-left: auto; /* This will center the table horizontally */
+            margin-right: auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #d3e835;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zipcode</th>
+                <th>Date Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>123 Main St</td>
+                <td>Springfield</td>
+                <td>IL</td>
+                <td>12345</td>
+                <td>2023-12-20</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+{% endblock %}

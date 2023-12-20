@@ -1,0 +1,55 @@
+<style>
+    .navbar {
+        background-color: #d3e835;
+        color: rgb(7, 90, 29);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .brand {
+        font-size: 24px; /* Bigger font size for the brand */
+    }
+
+    .brand a {
+        text-decoration: none;
+        color: rgb(7, 90, 29);
+    }
+
+    .nav-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .nav-button,
+    .nav-link {
+        padding: 8px 12px;
+        background-color: #85e01e;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-button:hover,
+    .nav-link:hover {
+        background-color: #8cd434;
+    }
+
+    /* Additional styling for anchor tags */
+    .nav-link {
+        text-decoration: none;
+        color: rgb(7, 90, 29);
+    }
+</style>
+
+
+
+<div class="navbar">
+    <div class="brand"><a href="{% url 'index' %}">DJANGO CRM</a></div>
+    <div class="nav-buttons">
+        <a href="/" class="nav-link">Add Record</a>
+        <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+    </div>
+</div>

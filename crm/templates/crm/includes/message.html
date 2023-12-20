@@ -1,0 +1,60 @@
+
+<style>
+        /* Messages styling */
+        /* Messages styling */
+    .messages {
+        list-style-type: none;
+        padding: 10px;
+        margin: 0;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000; /* Ensure it appears above other elements */
+    }
+
+    .messages li {
+        margin-bottom: 10px;
+        padding: 10px;
+        position: relative;
+        width: 45vw;
+    }
+
+/* ... (Rest of the styling remains the same) */
+
+
+    /* Success message styling */
+    .success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+
+    /* Error and other messages styling */
+    .error, .warning, .info {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+    }
+
+    /* Close button styling */
+    .close-btn {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+</style>
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{% if message.tags %}{{ message.tags }}{% endif %}">
+                {{ message }}
+                <span class="close-btn" onclick="this.parentElement.style.display='none'">&times;</span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
